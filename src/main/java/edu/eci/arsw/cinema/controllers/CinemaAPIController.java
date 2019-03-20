@@ -55,13 +55,13 @@ public class CinemaAPIController {
 			return new ResponseEntity<>("Error bla bla bla", HttpStatus.NOT_FOUND);
 		}
 	}
-	@GetMapping("{name}")
+	@GetMapping("/{name}")
 	public ResponseEntity<?> getByName(@PathVariable String name) throws CinemaPersistenceException, CinemaException {
 		try {
 
 			Cinema c = cs.getCinemaByName(name);
-			ArrayList<CinemaFunction> data = (ArrayList<CinemaFunction>) c.getFunctions();
-			return new ResponseEntity<>(cs, HttpStatus.ACCEPTED);
+			//ArrayList<CinemaFunction> data = (ArrayList<CinemaFunction>) c.getFunctions();
+			return new ResponseEntity<>(cs.getCinemaByName(name), HttpStatus.ACCEPTED);
 
 		} catch (CinemaPersistenceException ex) {
 			Logger.getLogger(CinemaAPIController.class.getName()).log(Level.SEVERE, null, ex);
@@ -69,7 +69,7 @@ public class CinemaAPIController {
 		}
 	}
 
-	@GetMapping("{name}/{date}")
+	@GetMapping("/{name}/{date}")
 
 	public ResponseEntity<?> getByNameAndDate(@PathVariable String name, @PathVariable String date)
 			throws ResourceNotFoundException {
@@ -84,7 +84,7 @@ public class CinemaAPIController {
 
 	}
 
-	@GetMapping("{name}/{date}/{moviename}")
+	@GetMapping("/{name}/{date}/{moviename}")
 
 	public ResponseEntity<?> getByNameAndDateAndName(@PathVariable String name, @PathVariable String date,
 			@PathVariable String moviename) throws ResourceNotFoundException, CinemaException, CinemaPersistenceException {
@@ -100,7 +100,7 @@ public class CinemaAPIController {
 
 	}
 
-	@PostMapping("{name}")
+	@PostMapping("/{name}")
 	public ResponseEntity<?> Postbyfuntion(@PathVariable String name, @RequestBody CinemaFunction funtion) {
 		try {
 			cs.addfuntion(name, funtion);
@@ -113,7 +113,7 @@ public class CinemaAPIController {
 
 	}
 
-	@PutMapping("{name}")
+	@PutMapping("/{name}")
 	public ResponseEntity<?> PostbyName(@PathVariable String name, @RequestBody CinemaFunction funtion)
 			throws CinemaException {
 		try {
