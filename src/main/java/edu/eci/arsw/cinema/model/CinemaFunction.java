@@ -68,10 +68,6 @@ public class CinemaFunction {
 		this.numSeats = numSeats;
 	}
 
-	public String getGen() {
-		return movie.getGenre();
-	}
-
 	public List<List<Boolean>> getSeats() {
 		return this.seats;
 	}
@@ -91,5 +87,6 @@ public class CinemaFunction {
 	public void setDate(String date) {
 		this.date = date;
 	}
+
 
 }

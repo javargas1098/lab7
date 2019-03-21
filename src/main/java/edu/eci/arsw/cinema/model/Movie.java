@@ -11,15 +11,14 @@ package edu.eci.arsw.cinema.model;
  */
 public class Movie {
 	private String name;
-	private String gen;
-	private int seats;
+	private String genre;
 
 	public Movie() {
 	}
 
-	public Movie(String name, String gen) {
+	public Movie(String name, String genre) {
 		this.name = name;
-		this.gen = gen;
+		this.genre = genre;
 	}
 
 	public String getName() {
@@ -31,18 +30,11 @@ public class Movie {
 	}
 
 	public String getGenre() {
-		return gen;
+		return genre;
 	}
 
 	public void setGenre(String gen) {
-		this.gen = gen;
+		this.genre = gen;
 	}
 
-	public int getSeats() {
-		return seats;
-	}
-
-	public void setSeats(int seats) {
-		this.seats = seats;
-	}
 }

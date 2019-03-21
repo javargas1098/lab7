@@ -33,6 +33,7 @@ public class InMemoryCinemaPersistence implements CinemaPersitence {
 	public InMemoryCinemaPersistence() {
 		// load stub data
 		String functionDate = "2018-12-18 15:30";
+		String functionDate2 = "2018-12-18 15:30";
 		List<CinemaFunction> functions = new ArrayList<>();
 		CinemaFunction funct1 = new CinemaFunction(new Movie("SuperHeroes Movie", "Action"), functionDate);
 		CinemaFunction funct2 = new CinemaFunction(new Movie("The Night", "Horror"), functionDate);
@@ -40,14 +41,12 @@ public class InMemoryCinemaPersistence implements CinemaPersitence {
 		functions.add(funct2);
 		Cinema c = new Cinema("cinemaX", functions);
 		cinemas.put("cinemaX", c);
-
-		String functionDate2 = "2018-12-18 15:30";
-		List<CinemaFunction> functions2 = new ArrayList<>();
+		functions = new ArrayList<>();
 		CinemaFunction funct3 = new CinemaFunction(new Movie("SuperHeroes Movie 2", "Action"), functionDate2);
 		CinemaFunction funct4 = new CinemaFunction(new Movie("The Night 2", "Horror"), functionDate2);
-		functions2.add(funct3);
-		functions2.add(funct4);
-		Cinema c1 = new Cinema("cinemaY", functions2);
+		functions.add(funct3);
+		functions.add(funct4);
+		Cinema c1 = new Cinema("cinemaY", functions);
 		cinemas.put("cinemaY", c1);
 	}
 
@@ -118,13 +117,13 @@ public class InMemoryCinemaPersistence implements CinemaPersitence {
 
 		}
 	}
-
+	@Override
 	public Cinema getCinema(String name) throws CinemaException {
-		Cinema c;
-		if ((c = cinemas.get(name)) == null) {
+		if ( cinemas.get(name) == null) {
 			throw new CinemaException("The given function to update does not exit");
+		}else {
+			return cinemas.get(name);
 		}
-		return c;
 	}
 
 	@Override

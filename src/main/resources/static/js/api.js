@@ -5,7 +5,7 @@ api = (function() {
 			$.ajax({
 				type : "GET",
 				url : "cinema/" + name,
-				succes :  function(data){
+				 function(data){
 					callack(data);
 				}
 			});

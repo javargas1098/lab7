@@ -50,6 +50,30 @@ apimock = (function() {
 							[ true, true, true, true, true, true, true, true,
 									true, true, true, true ] ],
 					"date" : "2018-12-18 15:30"
+				},
+				{
+					"movie" : {
+						"name" : "The Night",
+						"genre" : "Horror"
+					},
+					"seats" : [
+							[ true, true, true, true, true, true, true, true,
+									true, true, true, true ],
+							[ true, true, true, true, true, true, true, true,
+									true, true, true, true ],
+							[ true, true, true, true, true, true, true, true,
+									true, true, true, true ],
+							[ true, true, true, true, true, true, true, true,
+									true, true, true, true ][true, true, true,
+									true, true, true, true, true, true, true,
+									true, true],
+							[ true, true, true, true, true, true, true, true,
+									true, true, true, true ],
+							[ true, true, true, true, true, true, true, true,
+									true, true, true, true ] ],
+					"date" : "2018-12-18",
+					"hour" : "15:30",
+					"numSeats" : 84
 				} ]
 	} ];
 
