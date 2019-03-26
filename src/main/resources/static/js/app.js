@@ -1,3 +1,4 @@
+//codigo realizado con Sebastian goenaga 
 app = (function() {
 
 	var actualizarTabla = function(cine) {
